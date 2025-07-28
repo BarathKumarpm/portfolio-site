@@ -825,11 +825,13 @@
             .nav-inner {
               flex-wrap: nowrap;
               justify-content: space-between;
+              font-size: 0.8rem;
             }
 
             .logo, .nav-icon {
               flex-shrink: 0;
               white-space: nowrap;
+              font-size: 0.8rem;
             }
 
             .nav-links {
@@ -876,3 +878,79 @@
             padding: 3rem;
             margin-bottom: 3rem;
         }
+
+        @media (max-width: 768px) {
+        /* Fix About Section layout */
+        .about-header {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .profile-image {
+          width: 150px;
+          height: 200px;
+          margin-bottom: 1rem;
+        }
+
+        .about-info h2 {
+          font-size: 1.5rem;
+        }
+
+        .info-box {
+          padding: 1rem;
+        }
+
+        .info-row {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .info-label {
+          width: auto;
+          text-align: center;
+          margin-bottom: 0.25rem;
+        }
+
+        /* Fix Contact section */
+        .contact-container, 
+        .contact-info {
+          width: 100%;
+          max-width: 95vw;
+          overflow-wrap: break-word;
+          word-break: break-word;
+          padding: 2rem 1rem;
+          box-sizing: border-box;
+        }
+
+        .contact-details {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .contact-item {
+          flex-direction: column;
+          text-align: center;
+          padding: 1rem;
+        }
+
+        .contact-icon {
+          margin-bottom: 0.5rem;
+        }
+
+        .contact-subtitle {
+          font-size: 1.3rem;
+        }
+
+        .social-links {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        .social-link {
+          width: 45px;
+          height: 45px;
+          font-size: 1.2rem;
+        }
+      }
