@@ -901,6 +901,15 @@
           }
         
           /* Fix Contact section */
+          .contact-container,
+          .contact-info {
+            width: 100%;
+            max-width: 95vw;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            padding: 2rem 1rem;
+            box-sizing: border-box;
+          }
           .contact-details {
             grid-template-columns: 1fr;
             gap: 1.5rem;
