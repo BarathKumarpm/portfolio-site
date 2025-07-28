@@ -878,7 +878,14 @@
            flex-shrink: 0;
            white-space: nowrap;
          }
+         .logo {
+            font-size: 1.2rem;
+         }
 
+         .nav-icon {
+            font-size: 1.2rem;
+        }
+                
           .about-header {
             flex-direction: column;
             align-items: center;
