@@ -869,6 +869,16 @@
 
         @media (max-width: 768px) {
           /* Fix About Section layout */
+          .nav-inner {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+         }
+        
+         .logo, .nav-icon {
+           flex-shrink: 0;
+           white-space: nowrap;
+         }
+
           .about-header {
             flex-direction: column;
             align-items: center;
