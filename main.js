@@ -23,7 +23,7 @@
         createParticles('particles-about', 40);
         createParticles('particles-skills', 40);
         createParticles('particles-projects', 40);
-        createParticles('particles-eduexp', 40);
+        createParticles('particles-eduexp', 40);c
         createParticles('particles-contact', 40);
 
         // Terminal functionality
