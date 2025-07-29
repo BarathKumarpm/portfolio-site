@@ -28,36 +28,92 @@
 
         // Terminal functionality
         const projects = {
-            'lunar-lander': {
-                name: 'Multi-Agent Reinforcement Learning for Lunar Lander Coordination',
-                description: 'Developed a MARL system using PPO, PettingZoo, and OpenAI Gym for multi-agent coordination and collision-free soft landings in a parallel environment. Designed a custom reward mechanism, achieving 80% success rate in landing simulations with an average reward of 150 ± 0.3, using a decentralized reward sharing system.',
-                tech: 'Python, PPO, PettingZoo, OpenAI Gym, Reinforcement Learning, Multi-Agent Systems',
-                link: 'https://github.com/BarathKumarpm/lunar-lander-marl',
-                duration: 'Dec 2024 – Apr 2025'
+            "portfolio-site": {
+                name: "Personal Portfolio Website",
+                description: "A personal portfolio website showcasing projects, skills, education and experience.",
+                tech: "HTML, CSS, JavaScript",
+                link: "https://github.com/BarathKumarpm/portfolio-site",
+                duration: "Ongoing"
             },
-            'rubik-cube': {
-                name: '3D Rubik\'s Cube Simulator',
-                description: 'Created an interactive 3D Rubik\'s Cube simulator using Three.js, simulating multidimensional rotation with Three.js vectors and optimized for smooth performance on low-end CPUs (24% CPU improvement).',
-                tech: 'JavaScript, Three.js, WebGL, 3D Graphics, Performance Optimization',
-                link: 'https://github.com/BarathKumarpm/3d-rubik-cube',
-                duration: 'Nov 2024 – Dec 2024'
+            "ecomm-llm": {
+                name: "E-commerce Recommendation using LLM & RAG",
+                description: "RAG-based recommendation engine using LLMs for e-commerce product suggestion.",
+                tech: "Python, Jupyter Notebook, LlamaIndex, HuggingFace",
+                link: "https://github.com/BarathKumarpm/Ecomm_RAG-LLM_recommender",
+                duration: "Aug 2024 – Nov 2024"
             },
-            'ecommerce-llm': {
-                name: 'E-commerce Recommendation Explanation using LLMs',
-                description: 'Orchestrated the deployment of an RAG-based recommendation engine using LlamaIndex and HuggingFace. Achieved an average cosine similarity of 0.8 for top matches, with top-5 scores ranging from 0.75 to 0.8, demonstrating strong semantic relevance and retrieval quality.',
-                tech: 'Python, LlamaIndex, HuggingFace, RAG, LLMs, Vector Databases, Cosine Similarity',
-                link: 'https://github.com/BarathKumarpm/ecommerce-llm-recommendations',
-                duration: 'Aug 2024 – Nov 2024'
+            "lunar-lander": {
+                name: "Multi-Agent Reinforcement Learning Lunar Lander",
+                description: "Reinforcement learning simulation for multi-agent lunar landings.",
+                tech: "Python, PPO, PettingZoo, OpenAI Gym",
+                link: "https://github.com/BarathKumarpm/Multi_Agent_Lunar_Landing_Sim",
+                duration: "Dec 2024 – Apr 2025"
             },
-            'chaos-encryption': {
-                name: 'Social Media Post Encryption using Chaos Theory',
-                description: 'Built an encryption tool using chaos theory and Arnold transformation with pixel rearrangement to protect sensitive text and image data shared on social media platforms.',
-                tech: 'Python, Chaos Theory, Arnold Transformation, Image Processing, Cryptography',
-                link: 'https://github.com/BarathKumarpm/Social-Media-Post-Encryption',
-                duration: 'Aug 2023 – Nov 2023'
+            "interstellar-docking": {
+                name: "Interstellar Docking Scene Recreation",
+                description: "Recreates the docking scene from Interstellar using 3D graphics.",
+                tech: "JavaScript, Three.js, glTF",
+                link: "https://github.com/BarathKumarpm/Interstellar_Docking_Threejs",
+                duration: "Dec 2024"
+            },
+            "breast-cancer-qsvm": {
+                name: "Breast Cancer Prediction with QSVM",
+                description: "Quantum machine learning model using QSVM for breast cancer prediction.",
+                tech: "Python, Qiskit, QSVM, Jupyter Notebook",
+                link: "https://github.com/BarathKumarpm/Breast_Cancer_Prediction_QSVM",
+                duration: "Nov 2024"
+            },
+            "chaos-encryption": {
+                name: "Social Media Post Encryption",
+                description: "Chaos mapping and Arnold transformation for encrypting social media posts.",
+                tech: "JavaScript, Chaos Theory, Cryptography",
+                link: "https://github.com/BarathKumarpm/Social-Media-Post-Encryption",
+                duration: "Nov 2024"
+            },
+            "rubik-cube": {
+                name: "3D Rubik’s Cube Simulator",
+                description: "A 3D interactive Rubik's Cube simulator with reset and rotation options.",
+                tech: "JavaScript, Three.js, CSS",
+                link: "https://github.com/BarathKumarpm/RubikSimThreeJs",
+                duration: "Nov 2024"
+            },
+            "job-notes-app": {
+                name: "Job Application Notes App",
+                description: "React app for organizing notes related to job applications.",
+                tech: "JavaScript, React",
+                link: "https://github.com/BarathKumarpm/JobPrepia-Notes-ReactApp",
+                duration: "Oct 2024"
+            },
+            "tour-recommendation": {
+                name: "Personalized Tour Recommendation Engine",
+                description: "Python project recommending personalized travel destinations.",
+                tech: "Python",
+                link: "https://github.com/BarathKumarpm/TourRecommedations",
+                duration: "May 2024"
+            },
+            "gogo-travels": {
+                name: "IWP Travel Website",
+                description: "Forked travel website project for the Internet and Web Programming course.",
+                tech: "HTML, CSS, SCSS",
+                link: "https://github.com/BarathKumarpm/GOGOTravels_IWP",
+                duration: "Apr 2024"
+            },
+            "social-engineering": {
+                name: "Email OTP Login Simulation",
+                description: "Python login system with OTP-based email authentication simulation.",
+                tech: "Python, SMTP, Email Verification",
+                link: "https://github.com/BarathKumarpm/Social-Engineering-Attacks",
+                duration: "Apr 2024"
+            },
+            "web-scrapy": {
+                name: "Chess Rankings Web Scraper",
+                description: "Web scraping chess player data and visualizing their rankings.",
+                tech: "Python, Web Scraping, Matplotlib",
+                link: "https://github.com/BarathKumarpm/WebScrapy",
+                duration: "Apr 2024"
             }
-
         };
+
 
         const terminalOutput = document.getElementById('terminal-output');
         const terminalInput = document.getElementById('terminal-input');
