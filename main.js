@@ -135,75 +135,67 @@
 
             addTerminalLine(`<span class="prompt">barath@portfolio:~$</span> <span class="command">${command}</span>`);
 
-            switch (cmd) {
-                case 'help':
-                    addTerminalLine('Available commands:');
-                    addTerminalLine('  projects -ls                    # List all projects');
-                    addTerminalLine('  [project-name] -d              # Show project description');
-                    addTerminalLine('  [project-name] -t              # Show technologies used');
-                    addTerminalLine('  [project-name] -l              # Show project link');
-                    addTerminalLine('  clear                          # Clear terminal');
-                    addTerminalLine('  help                           # Show this help message');
-                    addTerminalLine('');
-                    addTerminalLine('Available projects: lunar-lander, rubik-cube, ecommerce-llm, chaos-encryption');
-                    break;
+            if (cmd === 'help') {
+                addTerminalLine('Available commands:');
+                addTerminalLine('  projects -ls                    # List all projects');
+                addTerminalLine('  [project-name] -d              # Show project description');
+                addTerminalLine('  [project-name] -t              # Show technologies used');
+                addTerminalLine('  [project-name] -l              # Show project link');
+                addTerminalLine('  clear                          # Clear terminal');
+                addTerminalLine('  help                           # Show this help message');
+                addTerminalLine('');
+                addTerminalLine('Type "projects -ls" to view all available project names.');
+            }
 
-                case 'projects':
-                    if (option === '-ls') {
-                        addTerminalLine('📁 Available Projects:');
-                        Object.keys(projects).forEach((key, index) => {
-                            addTerminalLine(`  ${index + 1}. ${key} - ${projects[key].name}`);
-                        });
-                    } else {
-                        addTerminalLine('Usage: projects -ls', 'error');
-                    }
-                    break;
+            else if (cmd === 'projects') {
+                if (option === '-ls') {
+                    addTerminalLine('📁 Available Projects:');
+                    Object.keys(projects).forEach((key, index) => {
+                        addTerminalLine(`  ${index + 1}. ${key} - ${projects[key].name}`);
+                    });
+                } else {
+                    addTerminalLine('Usage: projects -ls', 'error');
+                }
+            }
 
-                case 'lunar-lander':
-                case 'rubik-cube':
-                case 'ecommerce-llm':
-                case 'chaos-encryption':
-                    const project = projects[cmd];
-                    if (!project) {
-                        addTerminalLine(`Project '${cmd}' not found`, 'error');
+            else if (cmd === 'clear') {
+                const lines = terminalOutput.querySelectorAll('.terminal-line:not(.terminal-input-container)');
+                lines.forEach(line => line.remove());
+            }
+
+            else if (projects.hasOwnProperty(cmd)) {
+                const project = projects[cmd];
+                switch (option) {
+                    case '-d':
+                        addTerminalLine(`📋 ${project.name}`);
+                        addTerminalLine(`Duration: ${project.duration}`);
+                        addTerminalLine('');
+                        addTerminalLine(project.description);
                         break;
-                    }
+                    case '-t':
+                        addTerminalLine(`🛠️ Technologies used in ${project.name}:`);
+                        addTerminalLine(project.tech);
+                        break;
+                    case '-l':
+                        addTerminalLine(`🔗 Project Link: <a href="${project.link}" target="_blank">${project.link}</a>`);
+                        break;
+                    default:
+                        addTerminalLine(`Usage: ${cmd} [-d | -t | -l]`, 'error');
+                }
+            }
 
-                    switch (option) {
-                        case '-d':
-                            addTerminalLine(`📋 ${project.name}`);
-                            addTerminalLine(`Duration: ${project.duration}`);
-                            addTerminalLine('');
-                            addTerminalLine(project.description);
-                            break;
-                        case '-t':
-                            addTerminalLine(`🛠️ Technologies used in ${project.name}:`);
-                            addTerminalLine(project.tech);
-                            break;
-                        case '-l':
-                            addTerminalLine(`🔗 Project Link: ${project.link}`);
-                            break;
-                        default:
-                            addTerminalLine(`Usage: ${cmd} [-d | -t | -l]`, 'error');
-                    }
-                    break;
+            else if (cmd === '') {
+                // do nothing on empty input
+            }
 
-                case 'clear':
-                    const lines = terminalOutput.querySelectorAll('.terminal-line:not(.terminal-input-container)');
-                    lines.forEach(line => line.remove());
-                    break;
-
-                case '':
-                    break;
-
-                default:
-                    addTerminalLine(`Command not found: ${cmd}. Type 'help' for available commands.`, 'error');
+            else {
+                addTerminalLine(`Command not found: ${cmd}. Type 'help' for available commands.`, 'error');
             }
 
             addTerminalLine('');
         }
 
-        terminalInput.addEventListener('keydown', function(e) {
+        terminalInput.addEventListener('keydown', function (e) {
             if (e.key === 'Enter') {
                 const command = this.value;
                 if (command.trim()) {
@@ -229,6 +221,7 @@
                 }
             }
         });
+
 
         // Queue functionality for Education & Experience
         const experiences = [
